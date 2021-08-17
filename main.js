@@ -47,11 +47,14 @@ btnHold.addEventListener("click", function () {
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
 
-  if (scores[activePlayer] >= 100) {
+  if (scores[activePlayer] >= 20) {
     document
-      .querySelector(`player--${activePlayer}`)
+      .querySelector(`.player--${activePlayer}`)
       .classList.add("player--winner");
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove("plater--active");
+  } else {
+    switchPlayer();
   }
-
-  switchPlayer();
 });
